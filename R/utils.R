@@ -49,12 +49,23 @@ verify_result <- function(res) {
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_text html_elements
 
-scopes <- function() {
-    xml2::read_html("https://developer.spotify.com/documentation/general/guides/authorization/scopes/") %>%
-    rvest::html_elements('code') %>%
-    rvest::html_text() %>%
-    unique()
-    }
+#scopes <- function() {
+ #   xml2::read_html("https://developer.spotify.com/documentation/general/guides/authorization/scopes/") %>%
+  #  rvest::html_elements('code') %>%
+   # rvest::html_text() %>%
+    #unique()
+    #}
+
+scopes <- c("ugc-image-upload", "user-read-playback-state", "user-modify-playback-state", 
+            "user-read-currently-playing",
+            "app-remote-control", "streaming",
+            "playlist-read-private", "playlist-read-collaborative",
+            "playlist-modify-private", "playlist-modify-public",
+            "user-follow-modify", "user-follow-read",
+            "user-read-playback-position", "user-top-read",
+            "user-read-recently-played", "user-library-modify",
+            "user-library-read", "user-read-email",
+            "user-read-private")
 
 #' Remove duplicate album names
 #'
